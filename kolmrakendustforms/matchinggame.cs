@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -116,6 +116,7 @@ namespace kolmrakendustforms
                 card.Click += Card_Click;
                 table.Controls.Add(card);
             }
+        } // <- закрыли AddCardsToTable
 
         void Card_Click(object sender, EventArgs e)
         {
