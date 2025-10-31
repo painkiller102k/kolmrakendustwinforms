@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -158,25 +158,25 @@ namespace kolmrakendustforms
             }
         }
 
-        private void PrevButton_Click(object sender, EventArgs e)
+        private void PrevButton_Click(object sender, EventArgs e) //eelmine
         {
-            if (images.Count == 0) return;
-            currentIndex--;
-            if (currentIndex < 0) currentIndex = images.Count - 1;
+            if (images.Count == 0) return; // me ei tagasta midagi
+            currentIndex--; // vähendame piltide indeksit
+            if (currentIndex < 0) currentIndex = images.Count - 1; // vähem kui 0 / tagasi viimasele pildile
             pictureBox.Image = images[currentIndex];
         }
 
-        private void NextButton_Click(object sender, EventArgs e)
+        private void NextButton_Click(object sender, EventArgs e) //järgmine
         {
             if (images.Count == 0) return;
-            currentIndex++;
+            currentIndex++; // lisame
             if (currentIndex >= images.Count) currentIndex = 0;
             pictureBox.Image = images[currentIndex];
         }
 
         private void BgButton_Click(object sender, EventArgs e)
         {
-            using (ColorDialog dlg = new ColorDialog())
+            using (ColorDialog dlg = new ColorDialog()) // avame aken
             {
                 if (dlg.ShowDialog() == DialogResult.OK)
                     pictureBox.BackColor = dlg.Color;
