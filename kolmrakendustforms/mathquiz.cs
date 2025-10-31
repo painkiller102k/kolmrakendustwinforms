@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -25,7 +25,7 @@ namespace kolmrakendustforms
             Width = 450;
             Height = 350;
             StartPosition = FormStartPosition.CenterScreen;
-
+         
             BackColor = Color.FromArgb(240, 248, 255);
             ForeColor = Color.DarkSlateGray;
 
@@ -39,7 +39,7 @@ namespace kolmrakendustforms
                 ForeColor = Color.MidnightBlue
             };
 
-            difficultyBox = new ComboBox()
+            difficultyBox = new ComboBox() //raskuse valik
             {
                 Left = 200,
                 Top = 10,
@@ -177,7 +177,7 @@ namespace kolmrakendustforms
         {
             if (timeLeft > 0)
             {
-                timeLeft--;
+                timeLeft--; // aeg väheneb
                 timeLabel.Text = $"Aeg on: {timeLeft} sec";
             }
             else
@@ -195,36 +195,36 @@ namespace kolmrakendustforms
             if (addAns.Value == addLeft + addRight)
             {
                 correct++;
-                result += "Addition: Correct\n";
+                result += "Addition: Õige\n";
             }
             else
-                result += $"Addition: Wrong ({addLeft}+{addRight}={addLeft + addRight}, your answer={addAns.Value})\n";
+                result += $"Addition: Vale ({addLeft}+{addRight}={addLeft + addRight}, sinu vastus={addAns.Value})\n";
 
             if (subAns.Value == subLeft - subRight)
             {
                 correct++;
-                result += "Subtraction: Correct\n";
+                result += "Subtraction: Õige\n";
             }
             else
-                result += $"Subtraction: Wrong ({subLeft}-{subRight}={subLeft - subRight}, your answer={subAns.Value})\n";
+                result += $"Subtraction: Vale ({subLeft}-{subRight}={subLeft - subRight}, sinu vastus={subAns.Value})\n";
 
             if (mulAns.Value == mulLeft * mulRight)
             {
                 correct++;
-                result += "Multiplication: Correct\n";
+                result += "Multiplication: Õige\n";
             }
             else
-                result += $"Multiplication: Wrong ({mulLeft}×{mulRight}={mulLeft * mulRight}, your answer={mulAns.Value})\n";
+                result += $"Multiplication: Vale ({mulLeft}×{mulRight}={mulLeft * mulRight}, sinu vastus={mulAns.Value})\n";
 
             if (divAns.Value == divLeft / divRight)
             {
                 correct++;
-                result += "Division: Correct\n";
+                result += "Division: Õige\n";
             }
             else
-                result += $"Division: Wrong ({divLeft}÷{divRight}={divLeft / divRight}, your answer={divAns.Value})\n";
+                result += $"Division: Vale ({divLeft}÷{divRight}={divLeft / divRight}, sinu vastus={divAns.Value})\n";
 
-            result += $"\nTotal correct: {correct}/4";
+            result += $"\nKokku õige: {correct}/4";
             MessageBox.Show(result, "Quiz Result");
         }
     }
